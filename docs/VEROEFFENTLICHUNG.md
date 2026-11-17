@@ -24,7 +24,7 @@ git push origin main feat/calendar
 gh pr create --base main --head feat/calendar --title 'Schließungskalender mit konservativem Scraper und Pages' --body-file docs/PR.md
 ```
 
-Falls bereits ein origin-Remote eingerichtet ist, dessen Ziel prüfen und den `remote add`-Schritt auslassen. Der lokale Branch `main` enthält nur einen leeren Ausgangscommit; `feat/calendar` enthält das vollständige Projekt für den Pull Request.
+Falls bereits ein origin-Remote eingerichtet ist, dessen Ziel prüfen und den `remote add`-Schritt auslassen. Der lokale Branch `main` enthält nur einen Ausgangscommit mit `.gitignore`; `feat/calendar` enthält das vollständige Projekt für den Pull Request.
 
 Anschließend PR und CI prüfen, mergen und Settings → Pages → Source: **GitHub Actions** einstellen. Die weiteren möglichen Rechte-/Branch-/Umgebungseinstellungen stehen in der README. Danach unter Actions einmal manuell starten. Erst nach erfolgreichem Deployment ist die URL abonnierbar.
 
@@ -34,3 +34,19 @@ Die veröffentlichte Datei mit HTTP-Status 200 abrufen und erneut prüfen:
 curl --fail --location https://1-connexion.github.io/schwimmoper-saunakalender/sauna.ics --output /tmp/sauna-veroeffentlicht.ics
 schwimmoper-kalender --validate /tmp/sauna-veroeffentlicht.ics
 ```
+
+## Bei Verwendung des ZIP-Archivs
+
+Das ZIP enthält Quellcode ohne Git-Historie. Vor den obigen CLI-Schritten die lokalen Branches anlegen:
+
+```sh
+cd schwimmoper-saunakalender
+git init -b main
+git add .gitignore
+git commit -m 'chore: Projektbasis anlegen'
+git switch -c feat/calendar
+git add .
+git commit -m 'feat: Schwimmoper-Schließungskalender'
+```
+
+Git benötigt dafür den lokal konfigurierten Namen und die Commit-E-Mail-Adresse.
