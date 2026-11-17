@@ -1,0 +1,18 @@
+[
+  {
+    "start": "2026-11-19T18:00:00+01:00",
+    "end": "2026-11-23T00:00:00+01:00",
+    "scope": "Schwimmoper gesamt",
+    "source": "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php",
+    "confirmed_at": "2026-11-17T17:47:06.681287+00:00",
+    "sequence": 0
+  },
+  {
+    "start": "2026-12-04T08:00:00+01:00",
+    "end": "2026-12-08T00:00:00+01:00",
+    "scope": "Schwimmoper gesamt",
+    "source": "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php",
+    "confirmed_at": "2026-11-17T17:47:06.681287+00:00",
+    "sequence": 0
+  }
+]

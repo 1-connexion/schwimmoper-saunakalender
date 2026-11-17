@@ -1,0 +1,68 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//schwimmoper-saunakalender//Inoffiziell//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Schwimmoper – angekündigte Schließungen (inoffiziell)
+X-WR-TIMEZONE:Europe/Berlin
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+COMMENT:This timezone only works from 2025-01-01 to 2027-12-31.
+BEGIN:STANDARD
+DTSTART:20250101T000000
+TZNAME:CET
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20250330T030000
+RDATE:20260329T030000,20270328T030000
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+BEGIN:STANDARD
+DTSTART:20251026T030000
+RDATE:20261025T030000,20271031T030000
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SUMMARY:Schwimmoper geschlossen – Gesamtbad
+DTSTART;TZID=Europe/Berlin:20261119T180000
+DTEND;TZID=Europe/Berlin:20261123T000000
+DTSTAMP:20261117T174706Z
+UID:2d97da6f5268f90d3820d4a73b91aac9@schwimmoper-saunakalender
+SEQUENCE:0
+DESCRIPTION:Inoffizieller Kalender. Angekündigte Schließung der gesamten
+  Schwimmoper. Keine gesonderte Sauna-Bestätigung. Enddatum einschließlic
+ h\; Kalenderende am Folgetag um 00:00 Uhr. Zuletzt bestätigt: 2026-11-17T
+ 17:47:06.681287+00:00. Quelle: https://www.wuppertal.de/tourismus-freizeit
+ /baeder/schwimmoper.php. Angaben können sich ändern\; bitte vor dem Besu
+ ch die Quelle prüfen.
+LOCATION:Schwimmoper\, Südstraße 29\, Wuppertal
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+URL:https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Schwimmoper geschlossen – Gesamtbad
+DTSTART;TZID=Europe/Berlin:20261204T080000
+DTEND;TZID=Europe/Berlin:20261208T000000
+DTSTAMP:20261117T174706Z
+UID:a18d59e9548fae532fa4833cd621ed61@schwimmoper-saunakalender
+SEQUENCE:0
+DESCRIPTION:Inoffizieller Kalender. Angekündigte Schließung der gesamten
+  Schwimmoper. Keine gesonderte Sauna-Bestätigung. Enddatum einschließlic
+ h\; Kalenderende am Folgetag um 00:00 Uhr. Zuletzt bestätigt: 2026-11-17T
+ 17:47:06.681287+00:00. Quelle: https://www.wuppertal.de/tourismus-freizeit
+ /baeder/schwimmoper.php. Angaben können sich ändern\; bitte vor dem Besu
+ ch die Quelle prüfen.
+LOCATION:Schwimmoper\, Südstraße 29\, Wuppertal
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+URL:https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php
+END:VEVENT
+END:VCALENDAR

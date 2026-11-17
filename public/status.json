@@ -1,0 +1,11 @@
+{
+  "attempted_at": "2026-11-17T17:47:06.681287+00:00",
+  "update_ok": true,
+  "events": 2,
+  "warnings": [
+    "PDF-/Bildinhalte werden nicht ausgewertet; Feiertagsschließungen können fehlen.",
+    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: Unbekanntes oder unvollständiges Schließungsformat; Absatz nicht übernommen.",
+    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: Unbekanntes oder unvollständiges Schließungsformat; Absatz nicht übernommen.",
+    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: Unbekanntes oder unvollständiges Schließungsformat; Absatz nicht übernommen."
+  ]
+}

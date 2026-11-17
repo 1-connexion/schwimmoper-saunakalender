@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Schwimmoper – inoffizieller Schließungskalender</title>
+<style>body{font:18px/1.6 system-ui;max-width:48rem;margin:3rem auto;padding:0 1rem}a{color:#075889}pre{white-space:pre-wrap;background:#eef4f6;padding:1rem}</style>
+<h1>Schwimmoper: Schließungskalender</h1>
+<p>Ein kostenloser, inoffizieller Kalender für ausdrücklich angekündigte Schließungen der Wuppertaler Schwimmoper. Gesamtbad-Schließungen sind als solche gekennzeichnet; eine gesonderte Sauna-Bestätigung liegt dafür nicht vor.</p>
+<p><a href="sauna.ics">ICS-Kalender abonnieren</a> · <a href="https://github.com/1-connexion/schwimmoper-saunakalender">Quellcode &amp; Abo-Anleitung</a></p>
+<p>Unvollständige Abdeckung: PDF-, Bild- und unklare Meldungen werden nicht automatisch übernommen. Ein leerer Kalender bedeutet keine bestätigte Öffnung. Bitte die <a href="https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php">offizielle Schwimmoper-Seite</a> vor dem Besuch prüfen. Ältere Termine bleiben bei Fehlern erhalten und können überholt sein.</p>
+<h2>Abrufstatus</h2><pre id="status">Status wird geladen …</pre>
+<script>fetch('status.json').then(r=>{if(!r.ok)throw Error();return r.json()}).then(s=>document.getElementById('status').textContent=JSON.stringify(s,null,2)).catch(()=>document.getElementById('status').textContent='Status derzeit nicht abrufbar.');</script>
+</html>
