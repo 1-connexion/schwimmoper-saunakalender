@@ -1,0 +1,77 @@
+name: Kalender prüfen und veröffentlichen
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+concurrency:
+  group: calendar-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -e '.[test]'
+      - run: pytest -q
+      - run: schwimmoper-kalender --validate public/sauna.ics
+  update:
+    if: github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -e .
+      - name: Quellen abrufen (bei Fehlern bleibt der letzte Kalender bestehen)
+        id: scrape
+        continue-on-error: true
+        run: schwimmoper-kalender
+      - name: Kalender vor Veröffentlichung prüfen
+        run: schwimmoper-kalender --validate public/sauna.ics
+      - name: Bestätigte Daten und Abrufstatus sichern
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/confirmed.json data/crawl.json public/sauna.ics public/status.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: bestätigte Schließungen und Abrufstatus aktualisieren'
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kalender-status
+          path: public/status.json
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Abruffehler sichtbar machen
+        if: steps.scrape.outcome == 'failure'
+        run: echo '::warning::Abruf fehlgeschlagen. Letzter bestätigter Kalender wird veröffentlicht; status.json prüfen.'
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
