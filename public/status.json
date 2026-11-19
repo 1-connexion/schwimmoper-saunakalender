@@ -1,11 +1,10 @@
 {
-  "attempted_at": "2026-11-17T17:47:06.681287+00:00",
-  "update_ok": true,
+  "attempted_at": "2026-11-19T14:28:09.692444+00:00",
+  "update_ok": false,
   "events": 2,
   "warnings": [
-    "PDF-/Bildinhalte werden nicht ausgewertet; Feiertagsschließungen können fehlen.",
-    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: Unbekanntes oder unvollständiges Schließungsformat; Absatz nicht übernommen.",
-    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: Unbekanntes oder unvollständiges Schließungsformat; Absatz nicht übernommen.",
-    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: Unbekanntes oder unvollständiges Schließungsformat; Absatz nicht übernommen."
+    "https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php: ValueError: HTTP 403 für https://www.wuppertal.de/tourismus-freizeit/baeder/schwimmoper.php; keine Wiederholung (auch bei 429).",
+    "https://www.wuppertal.de/tourismus-freizeit/baeder/staedtische_baeder.php: ValueError: HTTP 403 für https://www.wuppertal.de/tourismus-freizeit/baeder/staedtische_baeder.php; keine Wiederholung (auch bei 429).",
+    "Aktualisierung verworfen; zuletzt bestätigter Kalender bleibt erhalten."
   ]
 }
